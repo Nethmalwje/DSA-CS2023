@@ -54,16 +54,14 @@ struct node *deleteNode(struct node *root, int key)  {
     if (root == NULL)
         return root;
 
-    // If the key to be deleted is smaller than the root's key, search the left sub tree for the key.
+    
     if (key < root->key)
         root->left = deleteNode(root->left, key);
 
-    // If the key to be deleted is larger than the root's key, search the right sub tree for the key.
+   
     else if (key > root->key)
         root->right = deleteNode(root->right, key);
 
-    // if key is equal to root's key, perform the deletion operation.
-    //Prior to performing the deletion, check if the node has any children.
     else {
         // node has no children
         if (root->left == NULL and root->right == NULL)
@@ -81,11 +79,10 @@ struct node *deleteNode(struct node *root, int key)  {
             return temp;
         }
 
-        // node has two children
-        //Identify the node with the minimum value in the right sub tree. (inorder succesor)
+        
         struct node* temp = minValueNode(root->right);
 
-        // Copy the inorder successor's content to this node
+       
         root->key = temp->key;
 
         // Delete the inorder successor
