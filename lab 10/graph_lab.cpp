@@ -32,7 +32,7 @@ struct Graph{
     void print(){
         //lets iterate through each node and print its neighbours
         for (int i = 0; i<n ; i++){
-            cout <<"Adjacency list of node "<< nodes[i].label+1 << " -> " ;
+            cout << nodes[i].label+1 << " -> " ;
             for (int neighbour : nodes[i].neighbours){
                 cout << neighbour <<" ";
             }
